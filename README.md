@@ -23,10 +23,10 @@ python -m http.server 8000
 index.html   markup and copy
 style.css    design, layout, type
 main.js      scroll-spy nav, reveal, year
-founder.png  profile photo
+founder.jpg  profile photo
 ```
 
 ## Photo
 
-Drop a square portrait named `founder.png` in this folder. If it is missing, the site shows a
+Drop a square portrait named `founder.jpg` in this folder. If it is missing, the site shows a
 styled initial instead, so nothing ever breaks.
