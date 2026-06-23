@@ -239,22 +239,31 @@ a { color: inherit; text-decoration: none; }
   border-radius: 30px;
 }
 
-.toolset {
-  margin-top: 42px;
-  padding-top: 26px;
+.skills {
+  margin-top: 44px;
+  padding-top: 30px;
   border-top: 1px solid var(--line);
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.9;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
-.toolset span {
-  display: block;
+.skills__row {
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  gap: 22px;
+  align-items: baseline;
+}
+.skills__label {
   font-family: var(--mono);
   font-size: 11px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--faint);
-  margin-bottom: 8px;
+  color: var(--accent);
+}
+.skills__items {
+  font-size: 14.5px;
+  color: var(--muted);
+  line-height: 1.7;
 }
 
 /* contact */
