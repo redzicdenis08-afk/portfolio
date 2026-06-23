@@ -3,220 +3,157 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Denis Redzic | Founder & AI Systems Builder</title>
-  <meta name="description" content="Denis Redzic builds AI systems that ship to production: voice agents, automation, and the infrastructure that keeps them live." />
-  <meta property="og:title" content="Denis Redzic | Founder & AI Systems Builder" />
-  <meta property="og:description" content="Voice AI, full-stack engineering, automation, and cloud infrastructure. Real systems that talk to real customers." />
+  <title>Denis Redzic</title>
+  <meta name="description" content="Denis Redzic is a self-taught founder and AI systems builder. He builds AI that picks up the phone, does the work, and runs in production." />
+  <meta property="og:title" content="Denis Redzic" />
+  <meta property="og:description" content="Founder and AI systems builder. I build AI that picks up the phone, does the work, and runs while I sleep." />
   <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0c0b0a" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,600&family=Inter:wght@400;450;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="glow glow--1" aria-hidden="true"></div>
-  <div class="glow glow--2" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <a href="#about" class="skip">Skip to content</a>
 
-  <!-- NAV -->
-  <header class="nav" id="nav">
-    <a href="#top" class="nav__logo">DR</a>
-    <nav class="nav__links">
-      <a href="#about">About</a>
-      <a href="#capabilities">What I build</a>
-      <a href="#work">Work</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a href="https://github.com/redzicdenis08-afk" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">GitHub</a>
-    <button class="nav__toggle" id="navToggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </header>
-
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero__text reveal">
-        <p class="eyebrow">Founder &nbsp;·&nbsp; AI Systems Builder</p>
-        <h1>Denis Redzic</h1>
-        <p class="hero__lead">
-          I build AI systems that do real work. Voice agents that answer calls and close deals,
-          automation that runs businesses while everyone sleeps, and the infrastructure that keeps
-          it all live.
-        </p>
-        <div class="hero__cta">
-          <a href="#work" class="btn btn--primary">See the work</a>
-          <a href="#contact" class="btn btn--ghost">Get in touch</a>
-        </div>
-        <div class="hero__meta">
-          <span>Voice AI</span>
-          <span>Full-stack</span>
-          <span>Automation</span>
-          <span>Cloud infra</span>
-        </div>
-      </div>
-
-      <div class="hero__photo reveal">
-        <div class="photo">
+  <div class="shell">
+    <!-- SIDEBAR -->
+    <aside class="side">
+      <div class="side__top">
+        <div class="avatar" title="Denis Redzic">
           <img src="founder.png" alt="Denis Redzic"
-               onerror="this.style.display='none';this.closest('.photo').classList.add('photo--empty');" />
-          <span class="photo__initial">D</span>
+               onerror="this.style.display='none';this.closest('.avatar').classList.add('avatar--empty');" />
+          <span class="avatar__initial">D</span>
         </div>
-        <div class="photo__badge">
-          <span class="dot"></span> Building in production
+
+        <h1 class="name">Denis Redzic</h1>
+        <p class="role">Founder, AI systems builder</p>
+        <p class="tagline">I build AI that picks up the phone, does the work, and keeps running while I sleep.</p>
+
+        <nav class="nav" aria-label="Sections">
+          <a href="#about" data-nav><span class="nav__line"></span><span class="nav__txt">About</span></a>
+          <a href="#building" data-nav><span class="nav__line"></span><span class="nav__txt">What I'm building</span></a>
+          <a href="#contact" data-nav><span class="nav__line"></span><span class="nav__txt">Contact</span></a>
+        </nav>
+      </div>
+
+      <ul class="socials">
+        <li><a href="https://github.com/redzicdenis08-afk" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="#" target="_blank" rel="noopener" data-linkedin>LinkedIn</a></li>
+        <li><a href="mailto:hello@denisai.online">Email</a></li>
+      </ul>
+    </aside>
+
+    <!-- CONTENT -->
+    <main class="content">
+      <section id="about" class="block">
+        <p class="block__label">About</p>
+        <div class="prose">
+          <p>
+            I'm Denis, a self-taught builder from Bosnia. I make AI systems that talk to real
+            customers and move real money, not demos that only look good in a screenshot.
+          </p>
+          <p>
+            I work solo and end to end. I design it, write the code, set up the servers, and stay
+            on it until the thing actually works in the wild. So far that has meant voice agents
+            that call and close, software that reads the ad market, and automation that runs for
+            weeks without anyone touching it.
+          </p>
+          <p>
+            One question matters to me more than any other: does it still work when nobody is
+            watching. Most of what I build is answering a call or sending an email right now,
+            without me in the room.
+          </p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <div class="section__head reveal">
-        <span class="section__num">01</span>
-        <h2>About</h2>
-      </div>
-      <div class="about reveal">
-        <p>
-          I am a founder and builder focused on AI that ships to production, not demos.
-          Over the past few years I have built and run voice-AI platforms, ad-intelligence
-          software, and outbound automation end to end.
-        </p>
-        <p>
-          I design the system, write the code, deploy the infrastructure, and own the result.
-          Most of what I build talks to real customers and moves real money. I work fast, I test
-          before I trust, and I care more about whether something actually works than how it looks
-          on a slide.
-        </p>
-      </div>
-    </section>
+      <section id="building" class="block">
+        <p class="block__label">What I'm building</p>
+        <div class="entries">
+          <article class="entry">
+            <p class="entry__kind">Founder · Voice AI</p>
+            <h2 class="entry__name">Core Dispatch</h2>
+            <p class="entry__desc">
+              An AI receptionist and cold caller for local service businesses. It answers the
+              missed call, qualifies the lead, books the job, and hands hot prospects to a closing
+              agent. I built the whole pipeline: lead sourcing, call orchestration, the CRM behind
+              it, and the payment flow.
+            </p>
+            <ul class="tags">
+              <li>Python</li><li>VAPI</li><li>n8n</li><li>AWS</li><li>Cloudflare</li>
+            </ul>
+          </article>
 
-    <!-- CAPABILITIES -->
-    <section class="section" id="capabilities">
-      <div class="section__head reveal">
-        <span class="section__num">02</span>
-        <h2>What I build</h2>
-      </div>
-      <div class="cards">
-        <article class="card reveal">
-          <h3>Voice AI &amp; Agents</h3>
-          <p>Real-time call handling, dialogue design, lead qualification, and live appointment booking with conversational voice agents.</p>
-          <ul class="chips">
-            <li>VAPI</li><li>LLM dialogue</li><li>Telephony</li><li>Speech-to-text</li>
-          </ul>
-        </article>
-        <article class="card reveal">
-          <h3>Full-Stack Engineering</h3>
-          <p>Web apps and services from front end to API, built to be readable, maintainable, and fast to ship.</p>
-          <ul class="chips">
-            <li>Python</li><li>TypeScript</li><li>Next.js</li><li>React</li><li>Node</li>
-          </ul>
-        </article>
-        <article class="card reveal">
-          <h3>Automation &amp; Pipelines</h3>
-          <p>Browser automation, scraping, and scheduled workflows that run unattended and recover on their own.</p>
-          <ul class="chips">
-            <li>n8n</li><li>Playwright</li><li>Scraping</li><li>Cron / systemd</li>
-          </ul>
-        </article>
-        <article class="card reveal">
-          <h3>Cloud &amp; Infrastructure</h3>
-          <p>Deployment, DNS, background services, and databases that stay up and stay cheap.</p>
-          <ul class="chips">
-            <li>AWS EC2</li><li>Cloudflare</li><li>SQLite / Postgres</li><li>Linux</li>
-          </ul>
-        </article>
-      </div>
-    </section>
+          <article class="entry">
+            <p class="entry__kind">Founder · SaaS</p>
+            <h2 class="entry__name">Adoracle</h2>
+            <p class="entry__desc">
+              Ad intelligence software. It pulls competitor ads from public ad libraries and breaks
+              down the hooks and angles with AI, so a marketer can see what is actually working
+              before spending a dollar. Built as a TypeScript monorepo with a Next.js front end and
+              worker services behind it.
+            </p>
+            <ul class="tags">
+              <li>TypeScript</li><li>Next.js</li><li>Node</li><li>LLMs</li><li>Scraping</li>
+            </ul>
+          </article>
 
-    <!-- WORK -->
-    <section class="section" id="work">
-      <div class="section__head reveal">
-        <span class="section__num">03</span>
-        <h2>Selected work</h2>
-      </div>
-      <div class="work">
-        <article class="project reveal">
-          <div class="project__top">
-            <h3>Core Dispatch</h3>
-            <span class="tag">Voice AI Platform</span>
-          </div>
-          <p>
-            An AI receptionist and outbound caller for local service businesses. It answers missed
-            calls, qualifies leads, books appointments, and hands warm prospects to a closing agent.
-            I built the full pipeline: lead sourcing, call orchestration, CRM sync, and the payment flow.
-          </p>
-          <ul class="chips">
-            <li>Python</li><li>VAPI</li><li>n8n</li><li>AWS</li><li>Google Sheets</li>
-          </ul>
-        </article>
+          <article class="entry">
+            <p class="entry__kind">Builder · Voice Automation</p>
+            <h2 class="entry__name">Database Reactivation</h2>
+            <p class="entry__desc">
+              An AI voice system that calls a business's old, dead leads and turns them back into
+              booked work. It handles the outreach, the conversation, and the booking handoff on its
+              own, on a schedule, with no one dialing.
+            </p>
+            <ul class="tags">
+              <li>Python</li><li>VAPI</li><li>systemd</li><li>SQLite</li>
+            </ul>
+          </article>
 
-        <article class="project reveal">
-          <div class="project__top">
-            <h3>Adoracle</h3>
-            <span class="tag">AI Ad Intelligence SaaS</span>
-          </div>
-          <p>
-            A web app that pulls competitor ads from public ad libraries and breaks them down with AI:
-            the hooks, the angles, and what makes them convert. Built as a TypeScript monorepo with a
-            Next.js front end and worker services behind it.
-          </p>
-          <ul class="chips">
-            <li>TypeScript</li><li>Next.js</li><li>Node</li><li>LLM</li><li>Scraping</li>
-          </ul>
-        </article>
-
-        <article class="project reveal">
-          <div class="project__top">
-            <h3>Database Reactivation</h3>
-            <span class="tag">Outbound Voice Automation</span>
-          </div>
-          <p>
-            An AI voice system that re-engages a business's old, cold leads and turns them back into
-            booked appointments. Owner outreach, call scripting, and booking handoff, fully automated
-            and running on a schedule.
-          </p>
-          <ul class="chips">
-            <li>Python</li><li>VAPI</li><li>systemd</li><li>SQLite</li>
-          </ul>
-        </article>
-
-        <article class="project reveal">
-          <div class="project__top">
-            <h3>FormReach</h3>
-            <span class="tag">Outreach Engine</span>
-          </div>
-          <p>
-            A two-tier automation engine that finds and fills contact forms across thousands of sites,
-            with stealth browsing and automatic captcha handling. It runs 24/7 and keeps its own state
-            so it never double-contacts.
-          </p>
-          <ul class="chips">
-            <li>Python</li><li>Playwright</li><li>curl_cffi</li><li>Captcha solving</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section contact" id="contact">
-      <div class="contact__inner reveal">
-        <span class="section__num">04</span>
-        <h2>Let's build something</h2>
-        <p>
-          I am open to ambitious projects, founder roles, and serious engineering work.
-          If you are building something that needs to actually ship, reach out.
-        </p>
-        <div class="contact__btns">
-          <a href="mailto:hello@denisai.online" class="btn btn--primary">hello@denisai.online</a>
-          <a href="https://github.com/redzicdenis08-afk" target="_blank" rel="noopener" class="btn btn--ghost">GitHub</a>
-          <a href="#" target="_blank" rel="noopener" class="btn btn--ghost" data-linkedin>LinkedIn</a>
+          <article class="entry">
+            <p class="entry__kind">Builder · Automation</p>
+            <h2 class="entry__name">FormReach</h2>
+            <p class="entry__desc">
+              An outreach engine that finds and fills contact forms across thousands of sites, with
+              stealth browsing and automatic captcha solving. It runs around the clock and keeps its
+              own memory so it never hits the same business twice.
+            </p>
+            <ul class="tags">
+              <li>Python</li><li>Playwright</li><li>curl_cffi</li><li>2captcha</li>
+            </ul>
+          </article>
         </div>
-      </div>
-    </section>
-  </main>
 
-  <footer class="footer">
-    <span>© <span id="year">2026</span> Denis Redzic</span>
-    <span>Built from scratch.</span>
-  </footer>
+        <p class="toolset">
+          <span>Tools I reach for</span>
+          Python · TypeScript · Next.js · Node · VAPI · n8n · Playwright · AWS · Cloudflare · SQLite
+        </p>
+      </section>
+
+      <section id="contact" class="block">
+        <p class="block__label">Contact</p>
+        <div class="prose">
+          <p>
+            I'm open to serious engineering work, founder roles, and ambitious builds. If you are
+            making something that has to actually ship, not just look good in a deck, get in touch.
+          </p>
+        </div>
+        <div class="contact__links">
+          <a href="mailto:hello@denisai.online" class="cta">hello@denisai.online</a>
+          <a href="https://github.com/redzicdenis08-afk" target="_blank" rel="noopener" class="ghost">GitHub</a>
+          <a href="#" target="_blank" rel="noopener" class="ghost" data-linkedin>LinkedIn</a>
+        </div>
+      </section>
+
+      <footer class="foot">
+        <p>Designed and built by hand, no templates. Set in Fraunces, Inter, and JetBrains Mono.</p>
+        <p>© <span id="year">2026</span> Denis Redzic</p>
+      </footer>
+    </main>
+  </div>
 
   <script src="main.js"></script>
 </body>

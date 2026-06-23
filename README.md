@@ -1,34 +1,32 @@
 # Denis Redzic
 
-Personal portfolio site. Founder and AI systems builder.
+Personal site. Founder and AI systems builder.
 
-A fast, single-page static site: voice AI, full-stack engineering, automation, and cloud infrastructure, plus selected production work.
+A fast, hand-built single page: who I am, what I'm building, and how to reach me. No framework, no build step, no template.
 
 ## Stack
 
 - Plain HTML, CSS, and a small amount of vanilla JavaScript
-- No build step, no dependencies
-- Google Fonts (Inter, Space Grotesk)
+- Fonts: Fraunces (display), Inter (body), JetBrains Mono (labels)
+- Hosted on GitHub Pages
 
 ## Run locally
 
-Open `index.html` in a browser, or serve the folder:
-
 ```bash
 python -m http.server 8000
-# then visit http://localhost:8000
+# visit http://localhost:8000
 ```
 
 ## Structure
 
 ```
 index.html   markup and copy
-style.css    styling and layout
-main.js      scroll reveal, mobile nav, dynamic year
+style.css    design, layout, type
+main.js      scroll-spy nav, reveal, year
 founder.png  profile photo
 ```
 
-## Edit the photo
+## Photo
 
-Drop a square-ish portrait named `founder.png` in this folder. If the file is missing,
-the site shows a styled initial instead, so it never breaks.
+Drop a square portrait named `founder.png` in this folder. If it is missing, the site shows a
+styled initial instead, so nothing ever breaks.

@@ -1,7 +1,32 @@
 // year
-document.getElementById("year").textContent = new Date().getFullYear();
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// scroll reveal
+// scroll-spy: highlight the nav item for the section in view
+const navLinks = Array.from(document.querySelectorAll("[data-nav]"));
+const sections = navLinks
+  .map((a) => document.querySelector(a.getAttribute("href")))
+  .filter(Boolean);
+
+if (sections.length) {
+  const spy = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          const id = "#" + e.target.id;
+          navLinks.forEach((a) =>
+            a.classList.toggle("active", a.getAttribute("href") === id)
+          );
+        }
+      });
+    },
+    { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+  );
+  sections.forEach((s) => spy.observe(s));
+}
+
+// subtle reveal on scroll (no-JS safe: defaults to visible)
+const revealTargets = document.querySelectorAll(".prose, .entry, .toolset, .contact__links");
 const io = new IntersectionObserver(
   (entries) => {
     entries.forEach((e) => {
@@ -11,19 +36,10 @@ const io = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.12 }
+  { threshold: 0.15 }
 );
-document.querySelectorAll(".reveal").forEach((el, i) => {
-  el.style.transitionDelay = (i % 4) * 0.06 + "s";
+revealTargets.forEach((el, i) => {
+  el.classList.add("reveal");
+  el.style.transitionDelay = (i % 3) * 0.05 + "s";
   io.observe(el);
 });
-
-// mobile nav
-const toggle = document.getElementById("navToggle");
-const links = document.querySelector(".nav__links");
-if (toggle && links) {
-  toggle.addEventListener("click", () => links.classList.toggle("open"));
-  links.querySelectorAll("a").forEach((a) =>
-    a.addEventListener("click", () => links.classList.remove("open"))
-  );
-}
