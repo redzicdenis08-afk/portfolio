@@ -43,3 +43,26 @@ revealTargets.forEach((el, i) => {
   el.style.transitionDelay = (i % 3) * 0.05 + "s";
   io.observe(el);
 });
+
+
+// Email: open Gmail compose and copy the address with a toast
+function showToast(msg) {
+  let t = document.querySelector(".toast");
+  if (!t) {
+    t = document.createElement("div");
+    t.className = "toast";
+    document.body.appendChild(t);
+  }
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove("show"), 2400);
+}
+document.querySelectorAll(".email-link").forEach((a) => {
+  a.addEventListener("click", () => {
+    const email = a.dataset.email || "hello@denisai.online";
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email).then(() => showToast("Copied " + email)).catch(() => {});
+    }
+  });
+});
