@@ -382,6 +382,43 @@ a { color: inherit; text-decoration: none; }
 
 
 
+/* ===== ABOUT METRICS ===== */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 40px;
+}
+.metric {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 22px 18px;
+  background: linear-gradient(160deg, rgba(236,233,227,0.03), rgba(236,233,227,0));
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.metric:hover { border-color: var(--line-2); transform: translateY(-2px); }
+.metric__num {
+  display: block;
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.metric__lbl {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+@media (max-width: 480px) {
+  .metrics { grid-template-columns: 1fr; gap: 10px; }
+  .metric { padding: 18px 16px; display: flex; align-items: baseline; gap: 14px; }
+  .metric__num { margin-bottom: 0; flex: 0 0 auto; font-size: 28px; }
+}
+
 /* ===== TRACTION ===== */
 .funnel {
   display: flex;
