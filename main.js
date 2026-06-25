@@ -26,7 +26,9 @@ if (sections.length) {
 }
 
 // subtle reveal on scroll (no-JS safe: defaults to visible)
-const revealTargets = document.querySelectorAll(".prose, .entry, .toolset, .contact__links");
+const revealTargets = document.querySelectorAll(
+  ".prose, .entry, .metrics, .skills__row, .funnel, .quote, .useoffunds, .contact__links"
+);
 const io = new IntersectionObserver(
   (entries) => {
     entries.forEach((e) => {
@@ -36,12 +38,23 @@ const io = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.15 }
+  { threshold: 0.12 }
 );
-revealTargets.forEach((el, i) => {
+revealTargets.forEach((el) => {
   el.classList.add("reveal");
-  el.style.transitionDelay = (i % 3) * 0.05 + "s";
   io.observe(el);
+});
+
+// stagger reveal among siblings sharing a parent, so groups cascade in
+const groupSelectors = [".entries", ".skills", ".quotes"];
+groupSelectors.forEach((sel) => {
+  document.querySelectorAll(sel).forEach((group) => {
+    Array.from(group.children).forEach((child, i) => {
+      if (child.classList.contains("reveal")) {
+        child.style.transitionDelay = Math.min(i * 0.06, 0.3) + "s";
+      }
+    });
+  });
 });
 
 
