@@ -27,7 +27,7 @@ if (sections.length) {
 
 // subtle reveal on scroll (no-JS safe: defaults to visible)
 const revealTargets = document.querySelectorAll(
-  ".prose, .entry, .metrics, .skills__row, .funnel, .quote, .useoffunds, .contact__links"
+  ".prose, .entry, .metrics, .skills__row, .funnel, .quote, .contact__links"
 );
 const io = new IntersectionObserver(
   (entries) => {
