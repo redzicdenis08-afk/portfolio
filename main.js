@@ -8,7 +8,7 @@ const sections = navLinks
   .map((a) => document.querySelector(a.getAttribute("href")))
   .filter(Boolean);
 
-if (sections.length) {
+if ("IntersectionObserver" in window && sections.length) {
   const spy = new IntersectionObserver(
     (entries) => {
       entries.forEach((e) => {
@@ -23,27 +23,32 @@ if (sections.length) {
     { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
   );
   sections.forEach((s) => spy.observe(s));
+} else if (navLinks[0]) {
+  navLinks[0].classList.add("active");
 }
 
 // subtle reveal on scroll (no-JS safe: defaults to visible)
 const revealTargets = document.querySelectorAll(
-  ".prose, .entry, .metrics, .skills__row, .funnel, .quote, .contact__links"
+  ".prose, .entry, .metrics, .proof-grid, .skills__row, .funnel, .quote, .contact__links"
 );
-const io = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) {
-        e.target.classList.add("in");
-        io.unobserve(e.target);
-      }
-    });
-  },
-  { threshold: 0.12 }
-);
-revealTargets.forEach((el) => {
-  el.classList.add("reveal");
-  io.observe(el);
-});
+
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("in");
+          io.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+  revealTargets.forEach((el) => {
+    el.classList.add("reveal");
+    io.observe(el);
+  });
+}
 
 // stagger reveal among siblings sharing a parent, so groups cascade in
 const groupSelectors = [".entries", ".skills", ".quotes"];
@@ -57,8 +62,7 @@ groupSelectors.forEach((sel) => {
   });
 });
 
-
-// Email: open Gmail compose and copy the address with a toast
+// Email: open the user's mail app and copy the address with a toast
 function showToast(msg) {
   let t = document.querySelector(".toast");
   if (!t) {
@@ -71,6 +75,7 @@ function showToast(msg) {
   clearTimeout(t._timer);
   t._timer = setTimeout(() => t.classList.remove("show"), 2400);
 }
+
 document.querySelectorAll(".email-link").forEach((a) => {
   a.addEventListener("click", () => {
     const email = a.dataset.email || "hello@denisai.online";
