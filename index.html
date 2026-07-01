@@ -14,7 +14,10 @@
   <meta property="og:url" content="https://denis.denisai.online/" />
   <meta property="og:image" content="https://denis.denisai.online/og.png" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Denis Redzic, Founder of Core Dispatch Solutions" />
+  <meta name="twitter:description" content="Founder and AI engineer building Core Dispatch Solutions. AI voice agents that answer the phone, qualify the lead, and book the job. Live in production." />
   <meta name="twitter:image" content="https://denis.denisai.online/og.png" />
+  <meta property="og:image:alt" content="Denis Redzic, founder of Core Dispatch Solutions" />
   <link rel="canonical" href="https://denis.denisai.online/" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -39,7 +42,8 @@
       "memberOf": { "@type": "Organization", "name": "NVIDIA Inception" }
     },
     "sameAs": [
-      "https://github.com/redzicdenis08-afk"
+      "https://github.com/redzicdenis08-afk",
+      "https://www.linkedin.com/in/denis-redzic-118183419/"
     ]
   }
   </script>
@@ -74,6 +78,7 @@
 
       <ul class="socials">
         <li><a href="https://github.com/redzicdenis08-afk" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/denis-redzic-118183419/" target="_blank" rel="noopener">LinkedIn</a></li>
         <li><a href="mailto:hello@denisai.online?subject=Hello%20Denis" class="email-link" data-email="hello@denisai.online">Email</a></li>
       </ul>
     </aside>
@@ -104,7 +109,7 @@
 
         <div class="metrics">
           <div class="metric">
-            <span class="metric__num">6</span>
+            <span class="metric__num">7</span>
             <span class="metric__lbl">production AI systems shipped</span>
           </div>
           <div class="metric">
@@ -157,6 +162,20 @@
               pipeline: call orchestration, the CRM behind it, and the payment flow. It runs in
               production on AWS, and the company is an accepted member of NVIDIA Inception.
             </p>
+            <details class="entry__more">
+              <summary>How it's built</summary>
+              <div class="entry__more-body">
+                <p>
+                  An inbound call hits the voice agent and runs through a qualification state
+                  machine: greet, qualify, book, or route urgent work to a human. On the outbound
+                  side a dispatch layer enforces calling windows, attempt caps, and backoff per
+                  lead. Bookings land in the CRM with job details, and the payment flow closes the
+                  loop. It runs on AWS behind Cloudflare. The open <em>core-dispatch</em> engine on
+                  GitHub is that same qualify-and-schedule state machine, cleaned up and
+                  dependency-free, with its own tests and CI.
+                </p>
+              </div>
+            </details>
             <ul class="tags">
               <li>Python</li><li>VAPI</li><li>n8n</li><li>AWS</li><li>Cloudflare</li>
             </ul>
@@ -172,6 +191,19 @@
               voicemails, IVRs, and high-signal events like objections, pricing discussions, or bookings, 
               applying offline conversation quality scoring.
             </p>
+            <details class="entry__more">
+              <summary>How it's built</summary>
+              <div class="entry__more-body">
+                <p>
+                  A parser normalizes VAPI, Retell, Twilio, or plain-text transcripts into one call
+                  model. An outcome classifier separates humans from voicemail and IVR, a signal
+                  detector flags objections, pricing talk, bookings, and do-not-call requests with
+                  the exact lines as evidence, and a deterministic scorer grades the conversation.
+                  Pure Python standard library, zero runtime dependencies, fully offline — it runs
+                  the same on a laptop as it does in the pipeline.
+                </p>
+              </div>
+            </details>
             <ul class="tags">
               <li>Python</li><li>LLMs</li><li>CLI</li><li>CI/CD</li>
             </ul>
@@ -187,6 +219,19 @@
               before spending a dollar. Built as a TypeScript monorepo with a Next.js front end and
               worker services behind it.
             </p>
+            <details class="entry__more">
+              <summary>How it's built</summary>
+              <div class="entry__more-body">
+                <p>
+                  Ingestion workers pull ads from public ad libraries, a normalizer maps every
+                  source into one canonical ad model, and the analysis layer detects hooks and
+                  angles — question hooks, stat hooks, urgency, social proof — carrying the matched
+                  text as evidence, then scores the creative. A Next.js dashboard sits on top. The
+                  open <em>adoracle</em> repo carries the analysis engine: normalizer, detectors,
+                  and scoring.
+                </p>
+              </div>
+            </details>
             <ul class="tags">
               <li>TypeScript</li><li>Next.js</li><li>Node</li><li>LLMs</li><li>Scraping</li>
             </ul>
@@ -201,6 +246,19 @@
               booked work. It handles the outreach, the conversation, and the booking handoff on its
               own, on a schedule, with no one dialing.
             </p>
+            <details class="entry__more">
+              <summary>How it's built</summary>
+              <div class="entry__more-body">
+                <p>
+                  A ranking model orders the dormant list by win-back potential, and a scheduler
+                  builds compliant call queues: timezone calling windows, quiet hours, attempt
+                  caps, cooldowns. The voice agent works through the queue and outcomes feed
+                  straight back — opt-outs suppress permanently, voicemails back off, interest
+                  routes to booking. A readiness gate refuses to start a campaign unless config,
+                  suppression list, and windows all validate.
+                </p>
+              </div>
+            </details>
             <ul class="tags">
               <li>Python</li><li>VAPI</li><li>systemd</li><li>SQLite</li>
             </ul>
@@ -215,6 +273,19 @@
               audits, recruits audit firm partners, and routes the consults between them. It runs
               unattended with its own compliance engine, ML lead scoring, and live monitoring.
             </p>
+            <details class="entry__more">
+              <summary>How it's built</summary>
+              <div class="entry__more-body">
+                <p>
+                  Discovery and enrichment feed a scoring model that grades audit fit with an
+                  explainable factor breakdown. Every lead then passes a fail-closed compliance
+                  engine — state eligibility, suppression lists, calling windows — where missing
+                  data means blocked, not maybe. Qualified leads route to partner audit firms by
+                  state coverage and capacity, with an audit trail on every decision the system
+                  makes.
+                </p>
+              </div>
+            </details>
             <ul class="tags">
               <li>Python</li><li>VAPI</li><li>Playwright</li><li>ML</li><li>SQLite</li>
             </ul>
@@ -229,6 +300,18 @@
               ranks them, captures leads, and sells them to local businesses. Thousands of pages
               built from structured data, plus an AI receptionist for inbound calls.
             </p>
+            <details class="entry__more">
+              <summary>How it's built</summary>
+              <div class="entry__more-body">
+                <p>
+                  A generator expands services × cities into a full page matrix with rotating
+                  content templates so no two pages read the same, schema.org markup on every page,
+                  and chunked sitemaps. Inbound leads — form fills and calls — validate and route
+                  to the renting business with a fallback chain. Built on Next.js; the open repo is
+                  the generation and routing engine.
+                </p>
+              </div>
+            </details>
             <ul class="tags">
               <li>Next.js</li><li>TypeScript</li><li>SEO</li><li>VAPI</li><li>Tailwind</li>
             </ul>
@@ -243,6 +326,18 @@
               issues in their voice deployments as the hook, then delivers the build and managed
               operations. Safety first, with every live action gated behind explicit approval.
             </p>
+            <details class="entry__more">
+              <summary>How it's built</summary>
+              <div class="entry__more-body">
+                <p>
+                  An audit engine runs QA checks over an agency's live call transcripts —
+                  disclosures, objection handling, dead air, abrupt endings — and every finding
+                  ships with a receipt: the exact transcript lines that triggered it. Reports
+                  aggregate per call and per campaign. Anything that could touch a production
+                  system sits behind a dry-run-by-default action gate.
+                </p>
+              </div>
+            </details>
             <ul class="tags">
               <li>Python</li><li>SQLite</li><li>VAPI</li>
             </ul>
@@ -343,11 +438,13 @@
         <div class="contact__links">
           <a href="mailto:hello@denisai.online?subject=Hello%20Denis" class="cta email-link" data-email="hello@denisai.online">hello@denisai.online</a>
           <a href="https://github.com/redzicdenis08-afk" target="_blank" rel="noopener" class="ghost">GitHub</a>
+          <a href="https://www.linkedin.com/in/denis-redzic-118183419/" target="_blank" rel="noopener" class="ghost">LinkedIn</a>
         </div>
       </section>
 
       <footer class="foot">
-        <p>Designed and built by hand, no templates. Set in Fraunces, Inter, and JetBrains Mono.</p>
+        <p>Designed and built by hand, no templates. Set in Fraunces, Inter, and JetBrains Mono.
+           <a href="https://github.com/redzicdenis08-afk/portfolio" target="_blank" rel="noopener">Site source on GitHub</a>.</p>
         <p>© <span id="year">2026</span> Denis Redzic</p>
       </footer>
     </main>

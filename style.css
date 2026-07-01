@@ -247,6 +247,42 @@ a { color: inherit; text-decoration: none; }
   border-radius: 30px;
 }
 
+/* "How it's built" case-study disclosure */
+.entry__more { margin: -6px 0 16px; }
+.entry__more summary {
+  cursor: pointer;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--faint);
+  transition: color 0.2s;
+  width: fit-content;
+}
+.entry__more summary::-webkit-details-marker { display: none; }
+.entry__more summary::before {
+  content: "+";
+  color: var(--accent);
+  font-size: 14px;
+  line-height: 1;
+}
+.entry__more[open] summary::before { content: "\2212"; }
+.entry__more summary:hover { color: var(--muted); }
+.entry__more-body {
+  margin-top: 12px;
+  padding-left: 18px;
+  border-left: 1px solid var(--line-2);
+}
+.entry__more-body p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.entry__more-body em { color: var(--text); font-style: normal; font-family: var(--mono); font-size: 13px; }
+
 .entry__repo {
   display: inline-block;
   margin-top: 16px;
@@ -310,6 +346,8 @@ a { color: inherit; text-decoration: none; }
   gap: 6px;
 }
 .foot p { font-family: var(--mono); font-size: 12px; color: var(--faint); line-height: 1.6; }
+.foot a { color: var(--muted); border-bottom: 1px solid var(--line-2); transition: color 0.2s, border-color 0.2s; }
+.foot a:hover { color: var(--accent); border-color: var(--accent); }
 
 /* reveal */
 .block, .entry { opacity: 1; }

@@ -24,6 +24,8 @@ index.html   markup and copy
 style.css    design, layout, type
 main.js      scroll-spy nav, reveal, year
 founder.jpg  profile photo
+robots.txt   crawler rules
+sitemap.xml  search engine sitemap
 ```
 
 ## Photo
